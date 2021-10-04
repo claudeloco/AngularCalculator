@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="public/libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <script src="public/libs/angular/angular.min.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <title>AngularJS Calculator</title>
+</head>
+
+<body>
+    <div class="container text-center" ng-controller="calculatorController">
+        <div class="row">
+            <div class="offset-md-4 col-md-3 text-center" id="calc">
+                <div class="row" id="ledDisplay">
+                    <span>{{ledDisplay}}</span>
+                    <span>{{operationIcon}}</span>
+                </div>
+                <div class="row">
+                    <button id="allClear" type="button" class="btn btn-danger" ng-click="allClear()">AC</button>
+                    <button id="clear" type="button" class="btn btn-warning" ng-click="clearOne()">CE</button>
+                    <button id="modulas" type="button" class="btn btn-info" ng-click="operate('mod')">mod</button>
+                    <button id="/" type="button" class="btn btn-info" ng-click="operate('divide')">/</button>
+                </div>
+                <div class="row">
+                    <button id="7" type="button" class="btn btn-info" ng-click="enterInput(7)">7</button>
+                    <button id="8" type="button" class="btn btn-info" ng-click="enterInput(8)">8</button>
+                    <button id="9" type="button" class="btn btn-info" ng-click="enterInput(9)">9</button>
+                    <button id="*" type="button" class="btn btn-info" ng-click="operate('multiply')">x</button>
+                </div>
+                <div class="row">
+                    <button id="4" type="button" class="btn btn-info" ng-click="enterInput(4)">4</button>
+                    <button id="5" type="button" class="btn btn-info" ng-click="enterInput(5)">5</button>
+                    <button id="6" type="button" class="btn btn-info" ng-click="enterInput(6)">6</button>
+                    <button id="-" type="button" class="btn btn-info" ng-click="operate('subtract')">-</button>
+                </div>
+                <div class="row">
+                    <button id="1" type="button" class="btn btn-info" ng-click="enterInput(1)">1</button>
+                    <button id="2" type="button" class="btn btn-info" ng-click="enterInput(2)">2</button>
+                    <button id="3" type="button" class="btn btn-info" ng-click="enterInput(3)">3</button>
+                    <button id="+" type="button" class="btn btn-info" ng-click="operate('add')">+</button>
+                </div>
+                <div class="row">
+                    <button id="0" type="button" class="btn btn-info" ng-click="enterInput(0)">0</button>
+                    <button id="." type="button" class="btn btn-info" ng-click="enterInput('.')">.</button>
+                    <button id="equals" type="button" class="btn btn-success" ng-click="getResult()">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="app/services/calculate.js"></script>
+    <script type="text/javascript" src="app/controllers/calculatorController.js"></script>
+</body>
+
+</html>
